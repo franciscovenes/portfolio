@@ -370,6 +370,8 @@ ul {
   color: #06191d;
 }
 
+.contact--form > input,
+.contact--form > textarea,
 .contact--form > textarea::placeholder,
 .contact--form > input::placeholder {
   font-family: "Source Code Pro", monospace;
@@ -496,6 +498,7 @@ footer {
   .about--details > .summary {
     text-align: unset;
     grid-area: first;
+    font-size: 1rem;
   }
 
   .about--contact--link {
@@ -505,10 +508,7 @@ footer {
 
   .about--skills {
     grid-area: third;
-  }
-
-  .about--skills--list {
-    justify-content: flex-start;
+    align-self: start;
   }
 
   .about--skills--list > li {

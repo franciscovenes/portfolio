@@ -21,7 +21,7 @@ const projectsData = [
     gitHubUrl: "https://github.com/franciscovenes/quizzical",
     netlifyUrl: "https://fantastic-toffee-63860d.netlify.app/",
   },
-  {
+  /* {
     id: nanoid(),
     title: "Warmi Muyu",
     imageUrl: "./assets/warmi-muyu.jpg",
@@ -30,7 +30,7 @@ const projectsData = [
     skills: ["css", "javascript", "react", "node", "sql"],
     gitHubUrl: "https://github.com/franciscovenes/warmimuyu",
     netlifyUrl: "",
-  },
+  }, */
   {
     id: nanoid(),
     title: "Rincón del Pancho",

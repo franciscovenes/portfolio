@@ -3,10 +3,20 @@ export default function About() {
     <div id="about" className="about--container section--container">
       <h1 className="section--title">About</h1>
       <div className="about--details">
-        <p className="summary">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
-          tempora explicabo quae quod deserunt eius sapiente
-        </p>
+        <div className="about--summary summary">
+          <p>
+            I&apos;m a Frontend Web Developer and a Political Ecologist scholar.
+            I divide my time between my passion for understanding
+            socioenvironmental conflicts and the excitement of building new
+            websites and applications.
+          </p>
+          <p>
+            I&apos;m open to Job opportunities where I can contribute, learn and
+            grow. If you have a good opportunity that matches my skills and
+            experience then don&apos;t hesitate to contact me.
+          </p>
+        </div>
+
         <a className="animate--fade about--contact--link" href="/#contact">
           Contact me
         </a>

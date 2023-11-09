@@ -46,8 +46,7 @@ export default function Contact() {
     <div id="contact" className="contact--container section--container">
       <h1 className="section--title">Contact</h1>
       <p className="summary">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
-        tempora explicabo quae quod deserunt eius sapiente
+        Feel free to contact me. I will get back at you as soon as possible 😊
       </p>
       <form onSubmit={submitMessage} className="contact--form">
         <label htmlFor="contact--form--name">Name: </label>
