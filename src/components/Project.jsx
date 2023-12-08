@@ -7,8 +7,8 @@ import {
   FaNodeJs,
   FaGithub,
 } from "react-icons/fa";
-import { PiFileSqlDuotone } from "react-icons/pi";
-import { SiNetlify } from "react-icons/si";
+
+import { SiNetlify, SiFirebase } from "react-icons/si";
 
 export default function Project({ project }) {
   const skillIcons = project.skills.map((skill) => {
@@ -24,13 +24,13 @@ export default function Project({ project }) {
         icon = <FaJs />;
         break;
       case "react":
-        icon = <FaReact />;
+        icon = <FaReact alt="React" />;
         break;
       case "node":
         icon = <FaNodeJs />;
         break;
-      case "sql":
-        icon = <PiFileSqlDuotone />;
+      case "firebase":
+        icon = <SiFirebase />;
         break;
       default:
         icon = "none";

@@ -14,6 +14,8 @@ export default function Contact() {
     recipient: "Francisco",
   });
 
+  const [sendMessage, setSendMessage] = useState(null);
+  const [sendStatus, setSendStatus] = useState(false);
   useEffect(() => {
     emailjs.init(PUBLIC_KEY);
   });
@@ -32,15 +34,25 @@ export default function Contact() {
 
   function submitMessage(e) {
     e.preventDefault();
+    setSendStatus(true);
     emailjs
       .send(SERVICE_ID, TEMPLATE_ID, contact)
       .then((res) => {
-        console.log("Sent successfully", res.status, res.text);
+        setSendMessage("Message sent successfully :)");
+        setContact({
+          sender: "",
+          email: "",
+          subject: "",
+          message: "",
+          recipient: "Francisco",
+        });
       })
       .catch((error) => {
-        console.log("Not Sent", error);
-      })
-      .finally(console.log("Form processed"));
+        setSendMessage(
+          "There was an error and your message could not be sent :( Please, try again!"
+        );
+      });
+    setSendStatus(false);
   }
   return (
     <div id="contact" className="contact--container section--container">
@@ -54,7 +66,7 @@ export default function Contact() {
           id="contact--form--name"
           className="contact--form--name"
           type="text"
-          value={contact.name}
+          value={contact.sender}
           onChange={handleChange}
           name="sender"
           required
@@ -90,7 +102,13 @@ export default function Contact() {
           name="message"
           required
         />
-        <button className="animate--fade contact--form--btn">Send</button>
+        <button
+          className="animate--fade contact--form--btn"
+          disabled={sendStatus}
+        >
+          {sendStatus ? "Sending message..." : "Send"}
+        </button>
+        {sendMessage && <p>{sendMessage}</p>}
       </form>
     </div>
   );

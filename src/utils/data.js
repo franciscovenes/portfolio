@@ -3,6 +3,16 @@ import { nanoid } from "nanoid";
 const projectsData = [
   {
     id: nanoid(),
+    title: "Warmi Muyu",
+    imageUrl: "./assets/warmi-muyu.jpg",
+    description:
+      "Web application designed to simplify the management of inventory by a group of female artisans",
+    skills: ["css", "javascript", "react", "firebase"],
+    gitHubUrl: "https://github.com/franciscovenes/warmi-muyu",
+    netlifyUrl: "https://warmi-muyu-test.netlify.app/",
+  },
+  {
+    id: nanoid(),
     title: "Twimba",
     imageUrl: "./assets/twimba.jpg",
     description:
@@ -21,16 +31,6 @@ const projectsData = [
     gitHubUrl: "https://github.com/franciscovenes/quizzical",
     netlifyUrl: "https://fantastic-toffee-63860d.netlify.app/",
   },
-  /* {
-    id: nanoid(),
-    title: "Warmi Muyu",
-    imageUrl: "./assets/warmi-muyu.jpg",
-    description:
-      "Web application designed to simplify the management of inventory by a group of female artisans",
-    skills: ["css", "javascript", "react", "node", "sql"],
-    gitHubUrl: "https://github.com/franciscovenes/warmimuyu",
-    netlifyUrl: "",
-  }, */
   {
     id: nanoid(),
     title: "Rincón del Pancho",
