@@ -1,0 +1,14 @@
+@import "reset";
+@import "header";
+
+$fontSize: 16px;
+$fontFamily: "Inter", sans-serif;
+
+body {
+  font: {
+    family: $fontFamily;
+    size: $fontSize;
+  }
+  min-width: 320px;
+  scroll-behavior: smooth;
+}

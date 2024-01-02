@@ -1,0 +1,25 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
