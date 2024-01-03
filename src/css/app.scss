@@ -1,14 +1,14 @@
-@import "reset";
-@import "header";
-
-$fontSize: 16px;
-$fontFamily: "Inter", sans-serif;
+@use "variables" as v;
+@use "reset";
+@use "header";
 
 body {
   font: {
-    family: $fontFamily;
-    size: $fontSize;
+    family: v.$fontFamily;
+    size: v.$fontSize;
   }
   min-width: 320px;
-  scroll-behavior: smooth;
+
+  height: 100vh;
+  border: solid 1px red;
 }

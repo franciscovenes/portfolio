@@ -4,18 +4,18 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import "./css/App.css";
+import "./css/app.scss";
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <Hero />
       <About />
       <Projects />
       <Contact />
       <Footer />
-    </div>
+    </>
   );
 }
 

@@ -1,12 +1,90 @@
+@use "variables" as v;
+
 .header--container {
   position: fixed;
   background-color: white;
   width: 100%;
+  padding: 1em 1em 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   z-index: 1;
+  -webkit-user-select: v.$userSelect;
+  -ms-user-select: v.$userSelect;
+  user-select: v.$userSelect;
 
-  nav {
-    padding: 1em;
+  .header--logo {
     display: flex;
     align-items: center;
+    gap: 1em;
+    margin-right: 1em;
+
+    img {
+      width: 4rem;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: -0.1rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  .header--nav--mobile {
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+
+  nav {
+    flex-basis: 100%;
+    margin-top: 1em;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.25rem;
+      text-align: center;
+      margin: 0 -1em;
+
+      a {
+        display: block;
+        border-top: solid 1px v.$primaryColor;
+        padding: 1em;
+        transition: all 0.8s ease;
+      }
+
+      a:hover {
+        background-color: v.$primaryColor;
+        color: whitesmoke;
+      }
+    }
+
+    /*     ul {
+      border: solid 1px red;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25em;
+      font-size: 1.25rem;
+
+      a {
+        position: relative;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        bottom: -5px;
+        transition: all 0.3s ease;
+      }
+
+      a:hover::after {
+        background-color: v.$primaryColor;
+        width: 100%;
+      }
+    } */
   }
 }

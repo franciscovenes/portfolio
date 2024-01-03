@@ -22,13 +22,12 @@ export default function Header() {
 
   return (
     <header className="header--container">
-      <div className="header--nav">
-        <a href="/" className="header--logo--name">
-          <img className="header--logo" src="./assets/icon.svg" alt="logo" />
-          <h1 className="header--name">Francisco Venes</h1>
-        </a>
-
-        <FiMenu onClick={handleMobileBtn} className="header--nav--mobile" />
+      <a href="/" className="header--logo">
+        <img src="./assets/icon.svg" alt="logo" />
+        <h1>Francisco Venes</h1>
+      </a>
+      <FiMenu onClick={handleMobileBtn} className="header--nav--mobile" />
+      <nav>
         <ul className="header--nav--list">
           <li>
             <a className="header--nav--link" href="#hero">
@@ -52,9 +51,9 @@ export default function Header() {
             </a>
           </li>
         </ul>
-      </div>
+      </nav>
 
-      <Fade show={mobileMenu} setShow={setMobileMenu}>
+      {/* <Fade show={mobileMenu} setShow={setMobileMenu}>
         <div className="header--mobile--dropdown">
           <ul className="header--mobile--dropdown--list">
             <li>
@@ -91,7 +90,7 @@ export default function Header() {
             </li>
           </ul>
         </div>
-      </Fade>
+      </Fade> */}
     </header>
   );
 }
