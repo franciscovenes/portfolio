@@ -8,8 +8,6 @@ export default function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [mobileUI, setMobileUI] = useState(null);
 
-  console.log(mobileMenu);
-
   const handleMobileBtn = () => {
     setMobileMenu((prevState) => !prevState);
   };
