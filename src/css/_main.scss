@@ -1,0 +1,328 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+@mixin section--container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  align-items: center;
+  padding: 10em 1em;
+
+  @include m.for-size(tablet) {
+    padding: 10em 2em;
+  }
+}
+
+@mixin title {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.section--title {
+  @include title;
+  font-size: 1.5em;
+  position: relative;
+  padding-bottom: 1.5em;
+}
+
+.section--title::after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 2rem;
+  background-color: v.$primaryColor;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+.summary {
+  line-height: 1.5;
+  font-size: 1.25rem;
+  font-family: "Source Code Pro", monospace;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Hero */
+
+.hero--container {
+  @include section--container;
+  @include m.hovered(v.$secondaryColor, v.$primaryColor);
+  @include m.for-size(tablet) {
+    position: relative;
+    padding-left: 5em;
+  }
+
+  h1 {
+    @include title;
+    font-size: 2em;
+  }
+
+  .hero--projects--link {
+    display: block;
+    color: v.$secondaryColor;
+    border: solid 1px;
+    padding: 1em 2em;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .hero--projects--link:hover {
+    @include m.hovered(v.$primaryColor, v.$secondaryColor);
+  }
+
+  .social--container {
+    @include m.for-size(tablet) {
+      position: absolute;
+      flex-direction: column;
+      left: 0;
+      border-radius: 0 5px 5px 0;
+      padding: 0.75em;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: v.$secondaryColor;
+    }
+  }
+
+  .social--container a {
+    @include m.for-size(tablet) {
+      color: v.$primaryColor;
+    }
+  }
+}
+
+/* About */
+
+.about--container {
+  @include section--container;
+  @include m.hovered(v.$primaryColor, v.$secondaryColor);
+
+  .about--details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+    @include m.for-size(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(100px, 400px));
+      grid-template-areas:
+        "first third"
+        "second third";
+      column-gap: 3em;
+    }
+
+    .summary {
+      @include m.for-size(tablet) {
+        text-align: unset;
+        grid-area: first;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .about--skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+    @include m.for-size(tablet) {
+      grid-area: third;
+      align-self: start;
+      margin-top: 2.5em;
+    }
+
+    ul {
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      li {
+        padding: 1em 2em;
+        background-color: rgba(153, 153, 153, 0.4);
+        border-radius: 5px;
+        font-weight: 600;
+
+        @include m.for-size(tablet) {
+          flex-grow: 1;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .about--contact--link {
+    display: block;
+    border: solid 1px;
+    padding: 1em 2em;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @include m.for-size(tablet) {
+      grid-area: second;
+      width: fit-content;
+    }
+  }
+
+  .about--contact--link:hover {
+    @include m.hovered(v.$secondaryColor, v.$primaryColor);
+  }
+}
+
+/* Projects */
+
+.projects--container {
+  @include section--container;
+  @include m.hovered(v.$secondaryColor, v.$primaryColor);
+
+  .section--title::after {
+    background-color: v.$secondaryColor;
+  }
+
+  .projects--list {
+    @include m.for-size(tablet) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      column-gap: 2em;
+    }
+  }
+}
+
+/* Project component */
+
+.project--container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding: 2em 0;
+  text-align: center;
+
+  img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 3px;
+  }
+
+  p {
+    font-family: "Source Code Pro", monospace;
+  }
+
+  ul {
+    display: flex;
+    gap: 1em;
+    font-size: 1.25rem;
+
+    @include m.for-size(tablet) {
+      margin-top: auto;
+    }
+  }
+
+  .project--links {
+    display: flex;
+    gap: 2em;
+
+    a {
+      display: flex;
+      gap: 0.5em;
+      align-items: center;
+      color: v.$secondaryColor;
+      border: solid 1px;
+      padding: 0.5em 1em;
+      border-radius: 2px;
+      font-weight: 600;
+      transition: all 0.3s ease-in;
+    }
+
+    a:hover {
+      @include m.hovered(v.$primaryColor, v.$secondaryColor);
+    }
+  }
+}
+
+.project--container:not(:last-child)::after {
+  content: "";
+  width: 6em;
+  height: 3px;
+  position: absolute;
+  background-color: v.$secondaryColor;
+  border-radius: 5px;
+  bottom: 0;
+
+  @include m.for-size(tablet) {
+    display: none;
+  }
+}
+
+/* Contact */
+
+.contact--container {
+  @include section--container;
+  @include m.hovered(v.$primaryColor, v.$secondaryColor);
+
+  @mixin formElementsFormat {
+    border-radius: 5px;
+    margin: 0.25em 0 1em;
+    padding: 1em;
+    color: v.$primaryColor;
+    border-style: none;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 700px;
+
+    label {
+      font-weight: 500;
+      color: v.$primaryColor;
+    }
+
+    input,
+    textarea,
+    textarea::placeholder,
+    input::placeholder {
+      font-family: "Source Code Pro", monospace;
+    }
+
+    input {
+      @include formElementsFormat;
+    }
+
+    textarea {
+      @include formElementsFormat;
+      resize: none;
+      height: 200px;
+    }
+
+    button {
+      @include formElementsFormat;
+      border: solid 1px v.$primaryColor;
+      font-family: "Inter", sans-serif;
+      background-color: transparent;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.3s ease-in;
+    }
+
+    button:hover {
+      @include m.hovered(v.$secondaryColor, v.$primaryColor);
+    }
+
+    button:disabled {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+  }
+}

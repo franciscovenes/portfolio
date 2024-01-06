@@ -41,34 +41,20 @@ export default function Project({ project }) {
 
   return (
     <div className="project--container">
-      <h2 className="project--title">{project.title}</h2>
-      <img
-        className="project--thumbnail"
-        src={project.imageUrl}
-        alt="Project screenshot"
-      />
-      <p className="project--description">{project.description}</p>
-      <ul className="project--skills--list">
+      <h2>{project.title}</h2>
+      <img src={project.imageUrl} alt="Project screenshot" />
+      <p>{project.description}</p>
+      <ul>
         {skillIcons.map((skill, index) => (
           <li key={index}>{skill}</li>
         ))}
       </ul>
       <div className="project--links">
-        <a
-          className="animate--fade"
-          href={project.netlifyUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={project.netlifyUrl} target="_blank" rel="noreferrer">
           <span>Website</span>
           <SiNetlify />
         </a>
-        <a
-          className="animate--fade"
-          href={project.gitHubUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={project.gitHubUrl} target="_blank" rel="noreferrer">
           GitHub <FaGithub />
         </a>
       </div>

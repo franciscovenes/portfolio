@@ -7,7 +7,7 @@ export default function Projects() {
   ));
 
   return (
-    <div id="projects" className="projects--container section--container">
+    <div id="projects" className="projects--container">
       <h1 className="section--title">Projects</h1>
       <p className="summary">
         Here you will find a list of my project&apos;s. Your website or app

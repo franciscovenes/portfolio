@@ -1,0 +1,126 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.header--container {
+  background-color: v.$secondaryColor;
+  position: fixed;
+  width: 100%;
+  padding: 1em 1em 0;
+  z-index: 1;
+  -webkit-user-select: v.$userSelect;
+  -ms-user-select: v.$userSelect;
+  user-select: v.$userSelect;
+
+  @include m.for-size(tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1em;
+  }
+
+  .header--logo {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: fit-content;
+    margin-bottom: 0.5em;
+
+    @include m.for-size(tablet) {
+      margin: 0;
+    }
+
+    img {
+      width: 4rem;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: -0.1rem;
+      font-size: 1.2rem;
+
+      @include m.for-size(tablet) {
+        font-size: 2em;
+      }
+    }
+  }
+
+  .header--nav--mobile {
+    font-size: 2.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  ul {
+    margin: 0 -1em;
+    text-align: center;
+    font-size: 1.25rem;
+
+    @include m.for-size(tablet) {
+      margin: 0;
+      display: flex;
+      gap: 1.25em;
+    }
+
+    a {
+      display: block;
+      padding: 0.75em;
+      border-top: solid 1px v.$primaryColor;
+      transition: all 0.5s ease;
+
+      @include m.for-size(tablet) {
+        border: none;
+        padding: 0;
+        position: relative;
+      }
+    }
+
+    a::after {
+      @include m.for-size(tablet) {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        bottom: -5px;
+        transition: all 0.3s ease;
+      }
+    }
+
+    a:hover {
+      @include m.hovered(v.$secondaryColor, v.$primaryColor);
+      @include m.for-size(tablet) {
+        background-color: unset;
+        color: unset;
+      }
+    }
+
+    a:hover::after {
+      @include m.for-size(tablet) {
+        background-color: v.$primaryColor;
+        width: 100%;
+      }
+    }
+  }
+}
