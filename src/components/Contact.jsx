@@ -16,9 +16,10 @@ export default function Contact() {
 
   const [sendMessage, setSendMessage] = useState(null);
   const [sendStatus, setSendStatus] = useState(false);
+
   useEffect(() => {
     emailjs.init(PUBLIC_KEY);
-  });
+  }, []);
 
   function handleChange(e) {
     const value =
@@ -32,39 +33,37 @@ export default function Contact() {
     }));
   }
 
-  function submitMessage(e) {
+  async function submitMessage(e) {
     e.preventDefault();
     setSendStatus(true);
-    emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, contact)
-      .then((res) => {
-        setSendMessage("Message sent successfully :)");
-        setContact({
-          sender: "",
-          email: "",
-          subject: "",
-          message: "",
-          recipient: "Francisco",
-        });
-      })
-      .catch((error) => {
-        setSendMessage(
-          "There was an error and your message could not be sent :( Please, try again!"
-        );
+    try {
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, contact);
+      setSendMessage("Message sent successfully :)");
+      setContact({
+        sender: "",
+        email: "",
+        subject: "",
+        message: "",
+        recipient: "Francisco",
       });
+    } catch {
+      setSendMessage(
+        "There was an error and your message could not be sent :( Please, try again!"
+      );
+    }
+
     setSendStatus(false);
   }
   return (
-    <div id="contact" className="contact--container section--container">
+    <div id="contact" className="contact--container">
       <h1 className="section--title">Contact</h1>
       <p className="summary">
         Feel free to contact me. I will get back at you as soon as possible 😊
       </p>
-      <form onSubmit={submitMessage} className="contact--form">
+      <form onSubmit={submitMessage}>
         <label htmlFor="contact--form--name">Name: </label>
         <input
           id="contact--form--name"
-          className="contact--form--name"
           type="text"
           value={contact.sender}
           onChange={handleChange}
@@ -74,7 +73,6 @@ export default function Contact() {
         <label htmlFor="contact--form--email">Email:</label>
         <input
           id="contact--form--email"
-          className="contact--form--email"
           type="email"
           value={contact.email}
           onChange={handleChange}
@@ -84,7 +82,6 @@ export default function Contact() {
         <label htmlFor="contact--form--subject">Subject:</label>
         <input
           id="contact--form--subject"
-          className="contact--form--subject"
           type="text"
           value={contact.subject}
           onChange={handleChange}
@@ -95,17 +92,13 @@ export default function Contact() {
         <label htmlFor="contact--form--message">Message:</label>
         <textarea
           id="contact--form--message"
-          className="contact--form--message"
           placeholder="Enter you message..."
           onChange={handleChange}
           value={contact.message}
           name="message"
           required
         />
-        <button
-          className="animate--fade contact--form--btn"
-          disabled={sendStatus}
-        >
+        <button disabled={sendStatus}>
           {sendStatus ? "Sending message..." : "Send"}
         </button>
         {sendMessage && <p>{sendMessage}</p>}

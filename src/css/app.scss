@@ -1,6 +1,8 @@
 @use "variables" as v;
 @use "reset";
 @use "header";
+@use "main";
+@use "footer";
 
 body {
   font: {
@@ -8,7 +10,16 @@ body {
     size: v.$fontSize;
   }
   min-width: 320px;
-
+  color: v.$primaryColor;
   height: 100vh;
-  border: solid 1px red;
+}
+
+.social--container {
+  display: flex;
+  font-size: 1.5rem;
+  gap: 0.5em;
+
+  a {
+    color: v.$secondaryColor;
+  }
 }

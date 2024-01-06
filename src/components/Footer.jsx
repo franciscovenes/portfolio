@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       <div className="footer--container">
         <Social />
-        <h1 className="footer--title">Francisco Venes</h1>
+        <h1>Francisco Venes</h1>
         <p className="footer--summary">
           Frontend developer and React developer. Dividing my time between
           studying socioenvironmental conflicts and web development.

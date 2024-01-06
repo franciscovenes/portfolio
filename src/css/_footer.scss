@@ -1,0 +1,59 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+footer {
+  background-color: v.$primaryColor;
+}
+
+.footer--container {
+  color: v.$secondaryColor;
+  padding: 2em 1em;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  @include m.for-size(tablet) {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "a d"
+      "b d"
+      "c d";
+  }
+
+  @include m.for-size(desktop) {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .social--container {
+    @include m.for-size(tablet) {
+      grid-area: d;
+      flex-direction: column;
+      justify-self: center;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .footer--summary {
+    font-family: "Source Code Pro", monospace;
+  }
+
+  .footer--credits {
+    font-size: 0.7rem;
+
+    a {
+      color: v.$secondaryColor;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      font-weight: 600;
+    }
+  }
+}

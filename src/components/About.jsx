@@ -1,9 +1,9 @@
 export default function About() {
   return (
-    <div id="about" className="about--container section--container">
+    <div id="about" className="about--container">
       <h1 className="section--title">About</h1>
       <div className="about--details">
-        <div className="about--summary summary">
+        <div className="summary">
           <p>
             I&apos;m a Frontend Web Developer and a Political Ecologist scholar.
             I divide my time between my passion for understanding
@@ -17,18 +17,19 @@ export default function About() {
           </p>
         </div>
 
-        <a className="animate--fade about--contact--link" href="/#contact">
+        <a className="about--contact--link" href="/#contact">
           Contact me
         </a>
         <div className="about--skills">
           <h2>My skills</h2>
-          <ul className="about--skills--list">
+          <ul>
             <li>HTML</li>
-            <li>CSS</li>
+            <li>CSS/SASS</li>
             <li>Javascipt</li>
             <li>React</li>
             <li>React-router</li>
             <li>Git</li>
+            <li>Strapi</li>
           </ul>
         </div>
       </div>
