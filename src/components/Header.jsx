@@ -7,7 +7,6 @@ export default function Header() {
 
   const handleMobileBtn = () => {
     setMobileMenu((prevState) => !prevState);
-    console.log("Clicked!");
   };
 
   return (
