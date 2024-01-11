@@ -1,7 +1,7 @@
 @use "variables" as v;
 @use "mixins" as m;
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -19,13 +19,14 @@
   to {
     opacity: 0;
   }
-}
+} */
 
 .header--container {
   background-color: v.$secondaryColor;
   position: fixed;
   width: 100%;
-  padding: 1em 1em 0;
+  // padding: 1em 1em 0;
+  padding: 1em 1em 0 0;
   z-index: 1;
   -webkit-user-select: v.$userSelect;
   -ms-user-select: v.$userSelect;
@@ -35,7 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 1em;
+    padding: 1em;
   }
 
   .header--logo {
@@ -44,6 +45,7 @@
     gap: 1em;
     width: fit-content;
     margin-bottom: 0.5em;
+    margin-left: 1em;
 
     @include m.for-size(tablet) {
       margin: 0;
@@ -64,23 +66,40 @@
     }
   }
 
-  .header--nav--mobile {
+  .header--nav--exit-btn,
+  .header--nav--open-btn {
     font-size: 2.5rem;
     cursor: pointer;
     position: absolute;
     top: 1rem;
     right: 1rem;
+
+    @include m.for-size(tablet) {
+      display: none;
+    }
+  }
+
+  .header--nav--hide-btn {
+    visibility: hidden;
   }
 
   ul {
-    margin: 0 -1em;
+    position: absolute;
+    background-color: v.$secondaryColor;
+    width: 100%;
     text-align: center;
     font-size: 1.25rem;
+    visibility: hidden;
+    transition: all 0.5s ease-in;
+    opacity: 0;
 
     @include m.for-size(tablet) {
-      margin: 0;
+      width: unset;
+      position: unset;
+      visibility: unset;
       display: flex;
       gap: 1.25em;
+      opacity: 1;
     }
 
     a {
@@ -122,5 +141,10 @@
         width: 100%;
       }
     }
+  }
+
+  .header--nav--mobile {
+    visibility: unset;
+    opacity: 1;
   }
 }
