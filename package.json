@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "packageManager": "pnpm@10.25.0",
+  "packageManager": "pnpm@12.10.1+sha512.ba40a37eb1a370d60fea8c4cf1d364c13bcccef518e98ad2bcee954f539d38da37458e58261a3fa55e06523450ea0ffff9f497b135be41f2c15c1642bacace6c",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,22 +12,22 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "nanoid": "^5.1.6",
+    "nanoid": "^5.1.16",
     "prop-types": "^15.8.1",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "react-icons": "^5.5.0",
-    "react-router-dom": "^7.12.0"
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-icons": "^5.7.0",
+    "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.2",
-    "eslint": "^9.39.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "eslint": "^9.39.5",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.4.26",
-    "sass": "^1.97.1",
-    "vite": "^7.3.0"
+    "sass": "^1.105.1",
+    "vite": "^7.3.7"
   }
 }
