@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import emailjs from "@emailjs/browser";
+import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 
 const SERVICE_ID = "service_djzm0sd";
 const TEMPLATE_ID = "template_rsf159m";
@@ -17,9 +17,9 @@ export default function Contact() {
   const [sendMessage, setSendMessage] = useState(null);
   const [sendStatus, setSendStatus] = useState(false);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     emailjs.init(PUBLIC_KEY);
-  }, []);
+  }, []); */
 
   function handleChange(e) {
     const value =
@@ -37,7 +37,9 @@ export default function Contact() {
     e.preventDefault();
     setSendStatus(true);
     try {
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, contact);
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, contact, {
+        publicKey: PUBLIC_KEY,
+      });
       setSendMessage("Message sent successfully :)");
       setContact({
         sender: "",
@@ -46,9 +48,10 @@ export default function Contact() {
         message: "",
         recipient: "Francisco",
       });
-    } catch {
+    } catch (error) {
+      console.error("EmailJS error:", error.status, error.text);
       setSendMessage(
-        "There was an error and your message could not be sent :( Please, try again!"
+        "There was an error and your message could not be sent :( Please, try again!",
       );
     }
 

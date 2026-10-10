@@ -12,6 +12,10 @@ body {
   min-width: 320px;
   color: v.$primaryColor;
   height: 100vh;
+
+  p {
+    max-width: 70ch;
+  }
 }
 
 .social--container {

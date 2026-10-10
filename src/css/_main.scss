@@ -103,25 +103,24 @@
   .about--details {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 2em;
+    max-width: 900px;
+    align-items: center;
 
-    @include m.for-size(tablet) {
+    /* @include m.for-size(tablet) {
       display: grid;
       grid-template-columns: repeat(2, minmax(100px, 400px));
       grid-template-areas:
         "first third"
         "second third";
       column-gap: 3em;
-    }
+    } */
 
-    .summary {
+    /* .summary {
       @include m.for-size(tablet) {
         text-align: left;
-        grid-area: first;
-        font-size: 1rem;
       }
-    }
+    } */
   }
 
   .about--skills {
@@ -129,12 +128,6 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
-
-    @include m.for-size(tablet) {
-      grid-area: third;
-      align-self: start;
-      margin-top: 2.5em;
-    }
 
     ul {
       display: flex;
@@ -148,10 +141,8 @@
         border-radius: 5px;
         font-weight: 600;
 
-        @include m.for-size(tablet) {
-          flex-grow: 1;
-          text-align: center;
-        }
+        flex-grow: 1;
+        text-align: center;
       }
     }
   }

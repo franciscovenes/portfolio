@@ -5,10 +5,15 @@ export default function About() {
       <div className="about--details">
         <div className="summary">
           <p>
-            I&apos;m a Frontend Web Developer and a Political Ecologist scholar.
-            I divide my time between my passion for understanding
-            socioenvironmental conflicts and the excitement of building new
-            websites and applications.
+            Full-stack web developer completing a PhD in Sociology. I build and
+            deploy web projects for community organisations, from the interface
+            to the database and self-managed Debian servers.
+          </p>
+          <p>
+            Experienced in React, Next.js, Node.js, PostgreSQL and the Strapi
+            headless CMS. Trained to work independently on long projects,
+            analyse data and communicate with non-technical stakeholders. I Work
+            in Portuguese, Spanish, English and Italian.
           </p>
           <p>
             I&apos;m open to Job opportunities where I can contribute, learn and
@@ -22,15 +27,40 @@ export default function About() {
         </a>
         <div className="about--skills">
           <h2>My skills</h2>
-          <ul>
-            <li>HTML</li>
-            <li>CSS/SASS</li>
-            <li>Javascipt</li>
-            <li>React</li>
-            <li>React-router</li>
-            <li>Git</li>
-            <li>Strapi</li>
-          </ul>
+          <section>
+            <h3>Frontend development</h3>
+            <ul>
+              <li>HTML</li>
+              <li>CSS/Sass</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React and React-router</li>
+              <li>Next.js</li>
+              <li>Git, Gituhb and Forgejo</li>
+              <li>Responsive Web Design</li>
+              <li>UI design with Figma</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Backend development</h3>
+            <ul>
+              <li>PostgreSQL</li>
+              <li>Node.js and Express</li>
+              <li>Strapi headless CMS</li>
+              <li>Supabase</li>
+              <li>API design and implementation</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Linux and deployment</h3>
+            <ul>
+              <li>Debian (desktop and server)</li>
+              <li>Command line and basic Bash scripting</li>
+              <li>nginx</li>
+              <li>PM2 process management</li>
+              <li>Webhook-based automated deployment</li>
+            </ul>
+          </section>
         </div>
       </div>
     </div>
