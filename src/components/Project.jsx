@@ -8,29 +8,60 @@ import {
   FaGithub,
 } from "react-icons/fa";
 
-import { SiNetlify, SiFirebase } from "react-icons/si";
+import {
+  SiNetlify,
+  SiFirebase,
+  SiStrapi,
+  SiNextdotjs,
+  SiPostgresql,
+  SiTypescript,
+  SiNginx,
+  SiNodedotjs,
+  SiSupabase,
+} from "react-icons/si";
 
 export default function Project({ project }) {
   const skillIcons = project.skills.map((skill) => {
     let icon;
     switch (skill) {
       case "html":
-        icon = <FaHtml5 aria-label="Html5" />;
+        icon = <FaHtml5 aria-label="Html5" title={skill} />;
         break;
       case "css":
-        icon = <FaCss3 />;
+        icon = <FaCss3 title={skill} />;
         break;
       case "javascript":
-        icon = <FaJs />;
+        icon = <FaJs title={skill} />;
         break;
       case "react":
-        icon = <FaReact alt="React" />;
+        icon = <FaReact alt="React" title={skill} />;
         break;
       case "node":
-        icon = <FaNodeJs />;
+        icon = <FaNodeJs title={skill} />;
         break;
       case "firebase":
-        icon = <SiFirebase />;
+        icon = <SiFirebase title={skill} />;
+        break;
+      case "strapi":
+        icon = <SiStrapi title={skill} />;
+        break;
+      case "nextjs":
+        icon = <SiNextdotjs title={skill} />;
+        break;
+      case "postgresql":
+        icon = <SiPostgresql title={skill} />;
+        break;
+      case "typescript":
+        icon = <SiTypescript title={skill} />;
+        break;
+      case "nginx":
+        icon = <SiNginx title={skill} />;
+        break;
+      case "nodejs":
+        icon = <SiNodedotjs title={skill} />;
+        break;
+      case "supabase":
+        icon = <SiSupabase title={skill} />;
         break;
       default:
         icon = "none";
@@ -50,13 +81,15 @@ export default function Project({ project }) {
         ))}
       </ul>
       <div className="project--links">
-        <a href={project.netlifyUrl} target="_blank" rel="noreferrer">
+        <a href={project.url} target="_blank" rel="noreferrer">
           <span>Website</span>
           <SiNetlify />
         </a>
-        <a href={project.gitHubUrl} target="_blank" rel="noreferrer">
-          GitHub <FaGithub />
-        </a>
+        {project.gitHubUrl && (
+          <a href={project.gitHubUrl} target="_blank" rel="noreferrer">
+            GitHub <FaGithub />
+          </a>
+        )}
       </div>
     </div>
   );

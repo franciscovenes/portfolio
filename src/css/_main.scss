@@ -179,7 +179,7 @@
   .projects--list {
     @include m.for-size(tablet) {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       column-gap: 2em;
     }
   }
@@ -211,6 +211,8 @@
     display: flex;
     gap: 1em;
     font-size: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
 
     @include m.for-size(tablet) {
       margin-top: auto;

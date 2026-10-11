@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const SERVICE_ID = "service_djzm0sd";
 const TEMPLATE_ID = "template_rsf159m";
@@ -16,10 +16,6 @@ export default function Contact() {
 
   const [sendMessage, setSendMessage] = useState(null);
   const [sendStatus, setSendStatus] = useState(false);
-
-  /*   useEffect(() => {
-    emailjs.init(PUBLIC_KEY);
-  }, []); */
 
   function handleChange(e) {
     const value =
