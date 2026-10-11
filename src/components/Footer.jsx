@@ -7,8 +7,8 @@ export default function Footer() {
         <Social />
         <h1>Francisco Venes</h1>
         <p className="footer--summary">
-          Frontend developer and React developer. Dividing my time between
-          studying socioenvironmental conflicts and web development.
+          Junior full-stack developer (React, Next.js, Node.js, PostgreSQL) with
+          a research background in socioenvironmental conflicts.
         </p>
         <p className="footer--credits">
           Designed by Francisco Venes. Inspired on{" "}
