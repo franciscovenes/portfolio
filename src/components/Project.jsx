@@ -6,6 +6,7 @@ import {
   FaReact,
   FaNodeJs,
   FaGithub,
+  FaSass,
 } from "react-icons/fa";
 
 import {
@@ -29,6 +30,9 @@ export default function Project({ project }) {
         break;
       case "css":
         icon = <FaCss3 title={skill} />;
+        break;
+      case "sass":
+        icon = <FaSass title={skill} />;
         break;
       case "javascript":
         icon = <FaJs title={skill} />;
